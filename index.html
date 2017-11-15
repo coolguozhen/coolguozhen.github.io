@@ -101,7 +101,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="E-boy">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://coolguozhen.github.io/index.html">
 <meta property="og:site_name" content="E-boy">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="https://coolguozhen.github.io/"/>
 
 
 
@@ -300,7 +300,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://coolguozhen.github.io/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E-boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E-boy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/" itemprop="url">
+                  INSTALL_PARSE_FAILED_NO_CERTIFICATES
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T20:38:00+08:00">
+                2017-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/" class="leancloud_visitors" data-flag-title="INSTALL_PARSE_FAILED_NO_CERTIFICATES">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近公司项目在做云测的时候，遇到了一个问题，提供给云测平台的apk在所有4.3以下的机器上都无法安装，报“INSTALL_PARSE_FAILED_NO_CERTIFICATES”错误，字面意思就是因为没有证书导致安装失败。</p>
+<p>通过分析apk发现，该apk采用了SHA256算法对文件进行了签名，如下图</p>
+<p><img src="/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/1510758148401.jpg" alt="sha256"></p>
+<p>回忆整个过程，由于是云测需要一些特殊的配置，就直接修改了相关代码后，在自己手机上run了一个包进行了验证，没问题后就发给了云测平台，殊不知由于我的手机是Android 7.0，gradle采用了SHA256算法对apk里面文件进行了签名，因为和Java 8 keytools 一样，Android 4.3也采用SHA256作为默认的签名算法，而在4.3以下的系统上并不支持，所以会导致安装时报“INSTALL_PARSE_FAILED_NO_CERTIFICATES”错误。</p>
+<p>所以对外的apk我们还是要采用CI或者直接gradle来打包，这样它会根据最小支持的系统版本来打相应的包，用gradle打包后的文件签名如下图</p>
+<p><img src="/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/1510759453973.jpg" alt="sha1"></p>
+<p>关于Android签名机制，这里有两篇文章写的非常清楚，贴于此处：</p>
+<p><a href="http://blog.csdn.net/jiangwei0910410003/article/details/50402000" target="_blank" rel="external">http://blog.csdn.net/jiangwei0910410003/article/details/50402000</a></p>
+<p><a href="http://blog.csdn.net/jiangwei0910410003/article/details/50443505" target="_blank" rel="external">http://blog.csdn.net/jiangwei0910410003/article/details/50443505</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://coolguozhen.github.io/2017/11/14/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="E-boy">
@@ -476,14 +638,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
