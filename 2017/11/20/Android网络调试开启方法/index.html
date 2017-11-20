@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="adb,wifi," />
 
 
 
@@ -99,14 +99,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://coolguozhen.github.io/about/index.html">
+<meta name="description" content="Android 在调试的过程中有时候会存在没有数据线或者不方便或者没法用数据线调试的时候，Google提供了如下两种方式开启网络调试  有数据线 12adb tcpip 5555adb connect ip  无数据线（需要root） 1234susetprop service.adb.tcp.port 5555stop adbdstart adbd ​">
+<meta name="keywords" content="adb,wifi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android网络调试开启方法">
+<meta property="og:url" content="https://coolguozhen.github.io/2017/11/20/Android网络调试开启方法/index.html">
 <meta property="og:site_name" content="E-boy">
+<meta property="og:description" content="Android 在调试的过程中有时候会存在没有数据线或者不方便或者没法用数据线调试的时候，Google提供了如下两种方式开启网络调试  有数据线 12adb tcpip 5555adb connect ip  无数据线（需要root） 1234susetprop service.adb.tcp.port 5555stop adbdstart adbd ​">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-15T15:45:37.333Z">
+<meta property="og:updated_time" content="2017-11-20T15:48:18.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="Android网络调试开启方法">
+<meta name="twitter:description" content="Android 在调试的过程中有时候会存在没有数据线或者不方便或者没法用数据线调试的时候，Google提供了如下两种方式开启网络调试  有数据线 12adb tcpip 5555adb connect ip  无数据线（需要root） 1234susetprop service.adb.tcp.port 5555stop adbdstart adbd ​">
 
 
 
@@ -134,19 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://coolguozhen.github.io/about/"/>
+  <link rel="canonical" href="https://coolguozhen.github.io/2017/11/20/Android网络调试开启方法/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-    about | E-boy
-  
-</title>
+  <title> Android网络调试开启方法 | E-boy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-right  ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,18 +304,198 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h2 class="post-title" itemprop="name headline">about</h2>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://coolguozhen.github.io/2017/11/20/Android网络调试开启方法/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E-boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E-boy">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android网络调试开启方法
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T23:38:04+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/20/Android网络调试开启方法/" class="leancloud_visitors" data-flag-title="Android网络调试开启方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <p>Android 在调试的过程中有时候会存在没有数据线或者不方便或者没法用数据线调试的时候，Google提供了如下两种方式开启网络调试</p>
+<ul>
+<li><p>有数据线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb tcpip 5555</span><br><span class="line">adb connect ip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无数据线（需要root）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">setprop service.adb.tcp.port 5555</span><br><span class="line">stop adbd</span><br><span class="line">start adbd</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/adb/" rel="tag"># adb</a>
+          
+            <a href="/tags/wifi/" rel="tag"># wifi</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/15/INSTALL-PARSE-FAILED-NO-CERTIFICATES/" rel="next" title="INSTALL_PARSE_FAILED_NO_CERTIFICATES">
+                <i class="fa fa-chevron-left"></i> INSTALL_PARSE_FAILED_NO_CERTIFICATES
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -521,6 +699,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
